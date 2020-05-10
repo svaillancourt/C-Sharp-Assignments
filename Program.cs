@@ -15,8 +15,16 @@ namespace myApp
 
             do
             {
-                Console.WriteLine("Choose a number that correspond to what you'd like to do: \n");
-                Console.WriteLine("1: Create a filename. This filename will be stored in a local variable");
+                Console.WriteLine(@"
+                ___  ___      _        ___  ___                 
+                |  \/  |     (_)       |  \/  |                 
+                | .  . | __ _ _ _ __   | .  . | ___ _ __  _   _ 
+                | |\/| |/ _` | | '_ \  | |\/| |/ _ \ '_ \| | | |
+                | |  | | (_| | | | | | | |  | |  __/ | | | |_| |
+                \_|  |_/\__,_|_|_| |_| \_|  |_/\___|_| |_|\__,_|");
+
+                Console.WriteLine("\nChoose a number that correspond to what you'd like to do: \n");
+                Console.WriteLine("1: Create a filename to store the lyrics to Redbone by Childish Gambino. This filename will be stored in a local variable");
                 Console.WriteLine("2: Replace a string within a new filename you created in Option 1");
                 Console.WriteLine("3: Exit the program");
                 Console.Write("\nEnter the number of your choice: ");
@@ -47,7 +55,7 @@ namespace myApp
 Lyrics
 -----------------
 Song: Redbone 
-Artist: Donald Glover
+Artist: Childish Gambino
 
 Daylight
 I wake up feeling like you won't play right
