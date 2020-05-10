@@ -2,11 +2,13 @@
 using System.Linq; //To use Linq methods on our arrays
 using System.IO; //To read from files
 
+// citation https://stackoverflow.com/questions/34035463/looping-through-a-menu-items-in-c-sharp
+
 namespace myApp
 {
     class Program
     {
-        static void myParamMethod(string myFileName) //Method which accepts two parameters and returns void
+        static void myOption1Output(string myFileName) //Method which accepts two parameters and returns void
         {
             string textContent = File.ReadAllText(myFileName);
             Console.WriteLine(textContent);
@@ -46,7 +48,7 @@ namespace myApp
 
                     //creates file if it exists and adds content to it, overwrites file content if file exists
                     File.WriteAllText(myFileName,
-        @"Lyrics
+                    @"Lyrics
 -----------------
 Song: Redbone 
 Artist: Donald Glover
