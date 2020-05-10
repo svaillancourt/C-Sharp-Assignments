@@ -8,11 +8,6 @@ namespace myApp
 {
     class Program
     {
-        static void myOption1Output(string myFileName) //Method which accepts two parameters and returns void
-        {
-            string textContent = File.ReadAllText(myFileName);
-            Console.WriteLine(textContent);
-        }
         static void Main(string[] args)
         {
             int num;
@@ -20,11 +15,11 @@ namespace myApp
 
             do
             {
-                Console.WriteLine("Choose a number that correspond to what you'd like to do: ");
-                Console.WriteLine("1: Create a filename. The filename will be stored in a local variable");
-                Console.WriteLine("2: Replace a string within filename");
-                Console.WriteLine("3: Quit");
-                Console.Write("Enter the number of your choice: ");
+                Console.WriteLine("Choose a number that correspond to what you'd like to do: \n");
+                Console.WriteLine("1: Create a filename. This filename will be stored in a local variable");
+                Console.WriteLine("2: Replace a string within filename you created in Option 1");
+                Console.WriteLine("3: Exit the program");
+                Console.Write("\nEnter the number of your choice: ");
                 userChoice = Console.ReadLine();
 
                 if (!Int32.TryParse(userChoice, out num)) continue;
@@ -48,7 +43,8 @@ namespace myApp
 
                     //creates file if it exists and adds content to it, overwrites file content if file exists
                     File.WriteAllText(myFileName,
-                    @"Lyrics
+                    @"
+                    Lyrics
 -----------------
 Song: Redbone 
 Artist: Donald Glover
@@ -108,6 +104,10 @@ If… ");
                     // Original string: "1 2 3 4 5 6 7 8 9"
                     // CSV string:      "1,2,3,4,5,6,7,8,9"
 
+                    Console.WriteLine("Enter a file name and file extension(.txt): ");
+                    // prompt not necessary, but helps with user understanding
+                    string myFileName = Console.ReadLine();
+
                     Console.WriteLine("Prompt: Please a string you like to replace: "); //prompt not necessary, but helps with user understanding
                     string replacement = Console.ReadLine();
 
@@ -127,6 +127,10 @@ If… ");
                     initialString = initialString.Replace(replacement, " ");
 
                     Console.WriteLine("Every '" + replacement + "' will be replaced with a blank space! \nHere are the results \n{0}\n", initialString);
+
+                    Console.WriteLine("\nPress enter to go to back to the main menu");
+                    // prompt not necessary, but helps with user understanding
+                    string myReturnToMenu = Console.ReadLine();
                 }
 
             } while (true);
