@@ -1,0 +1,13 @@
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\bin\Debug\netcoreapp3.1\myApp.exe
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\bin\Debug\netcoreapp3.1\myApp.deps.json
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\bin\Debug\netcoreapp3.1\myApp.runtimeconfig.json
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\bin\Debug\netcoreapp3.1\myApp.runtimeconfig.dev.json
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\bin\Debug\netcoreapp3.1\myApp.dll
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\bin\Debug\netcoreapp3.1\myApp.pdb
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\obj\Debug\netcoreapp3.1\myApp.csprojAssemblyReference.cache
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\obj\Debug\netcoreapp3.1\myApp.csproj.CoreCompileInputs.cache
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\obj\Debug\netcoreapp3.1\myApp.AssemblyInfoInputs.cache
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\obj\Debug\netcoreapp3.1\myApp.AssemblyInfo.cs
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\obj\Debug\netcoreapp3.1\myApp.dll
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\obj\Debug\netcoreapp3.1\myApp.pdb
+C:\Users\Step Laptop\Google Drive\Projects\School\TechCareers\Assignments\C Sharp - Hello World\myApp\obj\Debug\netcoreapp3.1\myApp.genruntimeconfig.cache
