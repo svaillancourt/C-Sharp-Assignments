@@ -17,7 +17,7 @@ namespace myApp
             {
                 Console.WriteLine("Choose a number that correspond to what you'd like to do: \n");
                 Console.WriteLine("1: Create a filename. This filename will be stored in a local variable");
-                Console.WriteLine("2: Replace a string within filename you created in Option 1");
+                Console.WriteLine("2: Replace a string within a new filename you created in Option 1");
                 Console.WriteLine("3: Exit the program");
                 Console.Write("\nEnter the number of your choice: ");
                 userChoice = Console.ReadLine();
@@ -29,7 +29,7 @@ namespace myApp
                     Environment.Exit(0);
                 }
 
-                Console.WriteLine("Choice = " + userChoice);
+                Console.WriteLine("You selected option: " + userChoice);
 
                 if (userChoice == "1")
                 {
@@ -44,7 +44,7 @@ namespace myApp
                     //creates file if it exists and adds content to it, overwrites file content if file exists
                     File.WriteAllText(myFileName,
                     @"
-                    Lyrics
+Lyrics
 -----------------
 Song: Redbone 
 Artist: Donald Glover
@@ -104,29 +104,43 @@ If… ");
                     // Original string: "1 2 3 4 5 6 7 8 9"
                     // CSV string:      "1,2,3,4,5,6,7,8,9"
 
-                    Console.WriteLine("Enter a file name and file extension(.txt): ");
+                    Console.WriteLine("Enter an existing file name and its file extension(.txt): ");
                     // prompt not necessary, but helps with user understanding
                     string myFileName = Console.ReadLine();
 
-                    Console.WriteLine("Prompt: Please a string you like to replace: "); //prompt not necessary, but helps with user understanding
-                    string replacement = Console.ReadLine();
+                    // Console.WriteLine(File.Exists(myFileName)); //Returns true or false on if our file exists
 
-                    // Output the content within the file
-                    string textContent = File.ReadAllText(myFileName);
-                    Console.WriteLine(textContent);
+                    bool FileExistence = File.Exists(myFileName);
 
-                    // this shows your content
-                    String initialString = textContent;
-                    Console.WriteLine("The initial string:\n\n{0}", initialString);
+                    //Returns true or false on if our file exists
+                    if (FileExistence == true)
+                    {
+                        Console.WriteLine("Please proceed with the string you'd like to replace within " + myFileName + "!");
 
-                    // spacing
-                    Console.WriteLine("\n----------");
-                    Console.WriteLine("----------\n");
+                        Console.WriteLine("Please enter the string in " + myFileName + " you like to replace: "); //prompt not necessary, but helps with user understanding
+                        string replacement = Console.ReadLine();
 
-                    // replace that the user request
-                    initialString = initialString.Replace(replacement, " ");
+                        // Output the content within the file
+                        string textContent = File.ReadAllText(myFileName);
+                        Console.WriteLine(textContent);
 
-                    Console.WriteLine("Every '" + replacement + "' will be replaced with a blank space! \nHere are the results \n{0}\n", initialString);
+                        // this shows your content
+                        String initialString = textContent;
+                        Console.WriteLine("The initial string:\n\n{0}", initialString);
+
+                        // spacing
+                        Console.WriteLine("\n----------");
+                        Console.WriteLine("----------\n");
+
+                        // replace that the user request
+                        initialString = initialString.Replace(replacement, " ");
+
+                        Console.WriteLine("\nEvery '" + replacement + "' will be replaced with a blank space! \nHere is the result in your " + myFileName + " file : \n{0}\n", initialString);
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nNo file exists yet with the filename you entered: " + myFileName + " to edit >.< Please use Option 1 to create that file first.");
+                    }
 
                     Console.WriteLine("\nPress enter to go to back to the main menu");
                     // prompt not necessary, but helps with user understanding
