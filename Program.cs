@@ -6,23 +6,47 @@ namespace myApp
 {
     class Program
     {
-        static void myParamMethod(string myFileName, string myFileContent) //Method which accepts two parameters and returns void
+        static void myParamMethod(string myFileName) //Method which accepts two parameters and returns void
         {
-            Console.WriteLine("File name is: " + myFileName + " File Content: " + myFileContent);
+            string textContent = File.ReadAllText(myFileName);
+            Console.WriteLine(textContent);
         }
         static void Main(string[] args)
         {
-            // (Option 1) 
+            int num;
+            string userChoice;
 
-            // User Inputs (will prompt the user to enter a filename. The filename will be stored in a local variable).
+            do
+            {
+                Console.WriteLine("Choose a number that correspond to what you'd like to do: ");
+                Console.WriteLine("1: Create a filename. The filename will be stored in a local variable");
+                Console.WriteLine("2: Replace a string within filename");
+                Console.WriteLine("3: Quit");
+                Console.Write("Enter the number of your choice: ");
+                userChoice = Console.ReadLine();
 
-            Console.WriteLine("Enter a file name and file extension(.txt): ");
-            // prompt not necessary, but helps with user understanding
-            string myFileName = Console.ReadLine();
+                if (!Int32.TryParse(userChoice, out num)) continue;
 
-            //creates file if it exists and adds content to it, overwrites file content if file exists
-            File.WriteAllText(myFileName,
-@"Lyrics
+                if (userChoice == "3")
+                {
+                    Environment.Exit(0);
+                }
+
+                Console.WriteLine("Choice = " + userChoice);
+
+                if (userChoice == "1")
+                {
+                    // (Option 1) 
+
+                    // User Inputs (will prompt the user to enter a filename. The filename will be stored in a local variable).
+
+                    Console.WriteLine("Enter a file name and file extension(.txt): ");
+                    // prompt not necessary, but helps with user understanding
+                    string myFileName = Console.ReadLine();
+
+                    //creates file if it exists and adds content to it, overwrites file content if file exists
+                    File.WriteAllText(myFileName,
+        @"Lyrics
 -----------------
 Song: Redbone 
 Artist: Donald Glover
@@ -58,42 +82,52 @@ If you need it (you better believe in something)
 We can make it, oh
 If… ");
 
-            // Output the content within the file
-            string textContent = File.ReadAllText(myFileName);
-            Console.WriteLine(textContent);
+                    // Output the content within the file
+                    string textContent = File.ReadAllText(myFileName);
+                    Console.WriteLine(textContent);
 
-            Console.WriteLine("\nPress enter to go to option 2...");
-            // prompt not necessary, but helps with user understanding
-            string myReturnToMenu = Console.ReadLine();
+                    Console.WriteLine("\nPress enter to go to back to the main menu");
+                    // prompt not necessary, but helps with user understanding
+                    string myReturnToMenu = Console.ReadLine();
+                }
 
-            // (Option 2) 
+                if (userChoice == "2")
+                {
+                    // (Option 2) 
 
-            //Replacement part (will prompt the user to enter a string. It will then go through the file specified by option 1 and replace any sequences of the user entered string with a blank space.)
+                    //Replacement part (will prompt the user to enter a string. It will then go through the file specified by option 1 and replace any sequences of the user entered string with a blank space.)
 
-            // example
-            // String str = "1 2 3 4 5 6 7 8 9";
-            // Console.WriteLine("Original string: \"{0}\"", str);
-            // Console.WriteLine("CSV string:      \"{0}\"", str.Replace(' ', ','));
+                    // example
+                    // String str = "1 2 3 4 5 6 7 8 9";
+                    // Console.WriteLine("Original string: \"{0}\"", str);
+                    // Console.WriteLine("CSV string:      \"{0}\"", str.Replace(' ', ','));
 
-            // This example produces the following output:
-            // Original string: "1 2 3 4 5 6 7 8 9"
-            // CSV string:      "1,2,3,4,5,6,7,8,9"
+                    // This example produces the following output:
+                    // Original string: "1 2 3 4 5 6 7 8 9"
+                    // CSV string:      "1,2,3,4,5,6,7,8,9"
 
-            Console.WriteLine("Prompt: Please a string you like to replace: "); //prompt not necessary, but helps with user understanding
-            string replacement = Console.ReadLine();
+                    Console.WriteLine("Prompt: Please a string you like to replace: "); //prompt not necessary, but helps with user understanding
+                    string replacement = Console.ReadLine();
 
-            // this shows your content
-            String initialString = textContent;
-            Console.WriteLine("The initial string:\n\n{0}", initialString);
+                    // Output the content within the file
+                    string textContent = File.ReadAllText(myFileName);
+                    Console.WriteLine(textContent);
 
-            // spacing
-            Console.WriteLine("\n----------");
-            Console.WriteLine("----------\n");
+                    // this shows your content
+                    String initialString = textContent;
+                    Console.WriteLine("The initial string:\n\n{0}", initialString);
 
-            // replace that the user request
-            initialString = initialString.Replace(replacement, " ");
+                    // spacing
+                    Console.WriteLine("\n----------");
+                    Console.WriteLine("----------\n");
 
-            Console.WriteLine("Every '" + replacement + "' will be replaced with a blank space! \nHere are the results \n{0}\n", initialString);
+                    // replace that the user request
+                    initialString = initialString.Replace(replacement, " ");
+
+                    Console.WriteLine("Every '" + replacement + "' will be replaced with a blank space! \nHere are the results \n{0}\n", initialString);
+                }
+
+            } while (true);
         }
     }
 }
